@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0B0B">
+  <title>Gaurav | Creative Developer & Interactive Designer</title>
+  <meta name="description" content="Portfolio of Gaurav, a digital creator specializing in interactive web design, high-end 3D experiences, AI development, and visual storytelling.">
+  <meta name="author" content="Gaurav">
+  <meta name="keywords" content="Creative Developer, WebGL, AI Development, Interactive Design, Portfolio, Frontend Engineer">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gaurav.dev/">
+  <meta property="og:title" content="Gaurav | Creative Developer">
+  <meta property="og:description" content="Building premium digital experiences — design studio, AI development, product development.">
+  <meta property="og:image" content="https://gaurav.dev/images/og-image.jpg">
+  <meta property="og:site_name" content="Gaurav Portfolio">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://gaurav.dev/">
+  <meta name="twitter:title" content="Gaurav | Creative Developer">
+  <meta name="twitter:description" content="Building premium digital experiences — design studio, AI development, product development.">
+  <meta name="twitter:image" content="https://gaurav.dev/images/og-image.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gaurav",
+    "jobTitle": "Creative Developer",
+    "url": "https://gaurav.dev/",
+    "sameAs": [
+      "https://github.com/gaurav2k5",
+      "https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader__counter" id="preloader-counter">0%</div>
+  </div>
+
+  <header class="top-bar" id="top-bar">
+    <a href="mailto:gauravp1566@gmail.com" class="top-bar__email">gauravp1566@gmail.com</a>
+    <button class="top-bar__menu" id="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <nav class="fullscreen-menu" id="fullscreen-menu">
+    <!-- Background Image Reveal Layer -->
+    <div class="fullscreen-menu__bg" id="menu-bg"></div>
+    <div class="fullscreen-menu__overlay"></div>
+
+    <button class="fullscreen-menu__close" id="menu-close" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="fullscreen-menu__content">
+      <ul class="fullscreen-menu__list">
+        <li><a href="index.html" class="fullscreen-menu__link" data-image="images/hero.png">Home</a></li>
+        <li><a href="index.html#featured" class="fullscreen-menu__link" data-image="images/summer-melt.png">Works</a></li>
+        <li><a href="index.html#about" class="fullscreen-menu__link" data-image="images/profile.jpg">About</a></li>
+        <li><a href="index.html#contact" class="fullscreen-menu__link" data-image="images/neon-rain.png">Contact</a></li>
+      </ul>
+      <div class="fullscreen-menu__footer">
+        <a href="mailto:gauravp1566@gmail.com">gauravp1566@gmail.com</a>
+        <div class="fullscreen-menu__socials">
+          <a href="https://x.com" target="_blank" rel="noopener">X</a>
+          <a href="https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/" target="_blank" rel="noopener">LI</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <canvas id="hero-canvas" class="hero__canvas"></canvas>
+        <!-- Overlay to ensure text readability over the canvas -->
+        <div class="hero__overlay"></div>
+      </div>
+      
+      <!-- Hero Top Meta: Clock and Tags -->
+      <div class="hero__meta">
+        <div class="hero__tags">
+          <span class="hero__tag">Design Studio</span>
+          <span class="hero__tag">AI Development</span>
+          <span class="hero__tag">Product Development</span>
+        </div>
+        <div class="clock-display">
+          <span class="clock-time">--:-- --</span> KOLKATA /
+        </div>
+      </div>
+
+      <!-- Hero Bottom Meta: Title and Socials -->
+      <div class="hero__bottom">
+        <div class="hero__bottom-left">
+          <div class="hero__portfolio-link">
+            <a href="#portfolio">PORTFOLIO</a>
+          </div>
+          <h1 class="hero__title split-text">BUILDING<br>DIGITAL<br>EXPERIENCES</h1>
+        </div>
+        <div class="hero__socials">
+          <div class="hero__social-group">
+            <a href="https://x.com" target="_blank" rel="noopener">x</a>
+            <a href="https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/" target="_blank" rel="noopener">LI</a>
+            <a href="https://www.behance.net/" target="_blank" rel="noopener">be</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--intro" id="intro">
+      <div class="intro__header reveal">
+        <span class="section-number">01</span>
+        <span class="section-label">/INTRODUCTION</span>
+      </div>
+      
+      <div class="intro__content">
+        <div class="intro__large-label">
+           /about me
+        </div>
+        <div class="intro__main">
+          <h2 class="intro__heading split-text">
+            I design and build interactive digital experiences, blending creative visuals with solid technical execution.
+          </h2>
+          
+          <div class="intro__body">
+            <div class="intro__image-wrapper reveal">
+               <img src="images/profile.jpg" alt="Gaurav profile" class="intro__profile-image">
+            </div>
+            <div class="intro__text-wrapper">
+              <p class="intro__text reveal reveal-delay-2">
+                I am Gaurav — a digital creator and electronics hobbyist.<br>
+                Whether I am building hardware projects like crafting<br>
+                high-quality, cinematic digital portraits, I focus on<br>
+                bringing complex ideas to life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="intro__footer reveal">
+        <span class="section-number">02</span>
+      </div>
+    </section>
+
+    <section class="section--featured" id="featured">
+      <div class="featured__header reveal">
+        <span class="section-number" style="color: var(--color-text-gray);">02</span>
+        <div class="featured__meta">
+          <span class="section-label--dark">/featured</span>
+          <span class="clock-display" style="color: var(--color-text-gray)"><span class="clock-time">--:-- --</span> KOLKATA /</span>
+        </div>
+      </div>
+      <h2 class="featured__title split-text">best works</h2>
+      <div class="featured__grid">
+        <div class="featured__card reveal">
+          <img src="images/into-the-virtual.png" alt="Into the Virtual — digital immersion portrait">
+        </div>
+        <div class="featured__card reveal">
+          <img src="images/frozen-echoes.png" alt="Frozen Echoes — ethereal winter portrait">
+        </div>
+        <div class="featured__card reveal">
+          <img src="images/virtual-threads.png" alt="Virtual Threads — futuristic digital fashion">
+        </div>
+      </div>
+    </section>
+
+    <section class="section--principles" id="principles">
+      <div class="principles__label">/principles</div>
+      <p class="principles__subtitle reveal">Formats are tailored for web, social media, or print.</p>
+      <h2 class="principles__heading split-text">Every project is tailored to the client and business</h2>
+      <div class="principles__grid">
+        <!-- Transparency Card -->
+        <div class="principle-card principle-card--transparency reveal">
+          <div>
+            <div class="principle-card__title">Transparency</div>
+            <div class="principle-card__desc">we discuss goals and outcomes before starting</div>
+          </div>
+        </div>
+        <!-- Smart Aesthetics Card -->
+        <div class="principle-card principle-card--aesthetics reveal reveal-delay-1">
+          <div class="principle-card__subtitle--dark" style="color: var(--color-text-gray);">Not beauty for its own sake, but storytelling and impact</div>
+          <div class="principle-card__title" style="color: var(--color-text-dark);">Smart aesthetics</div>
+        </div>
+        <!-- Honesty Card -->
+        <div class="principle-card principle-card--honesty reveal reveal-delay-2">
+          <div class="principle-card__icons">
+            <span>⬡</span>
+            <span>✦</span>
+            <span>▲</span>
+          </div>
+          <div class="principle-card__title--small" style="text-transform: uppercase;">Honesty about<br>technology</div>
+        </div>
+        <!-- Value-Driven Card -->
+        <div class="principle-card principle-card--value reveal reveal-delay-2">
+          <div>
+            <div class="principle-card__title--small" style="text-transform: uppercase; color: white;">Value-driven design</div>
+            <div class="principle-card__desc">visuals serve your goals</div>
+          </div>
+        </div>
+        <!-- Deadlines Card -->
+        <div class="principle-card principle-card--deadlines reveal reveal-delay-3">
+          <div class="principle-card__time"><span class="clock-time-short">--:--</span></div>
+          <div class="principle-card__desc">I respect deadlines and take full ownership of quality.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--dna" id="dna">
+
+      <!-- Ambient glow BG -->
+      <div class="dna__glow" aria-hidden="true"></div>
+
+      <!-- Section header -->
+      <div class="dna__header reveal">
+        <span class="section-number">03</span>
+        <div class="dna__header-meta">
+          <span class="section-label--dark">/design dna</span>
+        </div>
+      </div>
+
+      <!-- Manifesto line -->
+      <p class="dna__manifesto reveal reveal-delay-1">
+        "design is not decoration<br>— it is intention."
+      </p>
+
+      <!-- Oversized aesthetic words -->
+      <div class="dna__words" aria-hidden="true">
+        <span class="dna__word dna__word--filled reveal">RAW</span>
+        <span class="dna__word dna__word--outline reveal reveal-delay-1">BOLD</span>
+        <span class="dna__word dna__word--filled dna__word--sm reveal reveal-delay-2">MINIMAL</span>
+        <span class="dna__word dna__word--outline dna__word--sm reveal">CINEMATIC</span>
+        <span class="dna__word dna__word--gold reveal reveal-delay-1">DARK</span>
+        <span class="dna__word dna__word--outline dna__word--xs reveal reveal-delay-2">EDITORIAL</span>
+      </div>
+
+      <!-- Scrolling discipline ticker -->
+      <div class="dna__ticker" aria-hidden="true">
+        <div class="dna__ticker-track">
+          <span>Brand Identity</span><span class="dna__ticker-dot">·</span>
+          <span>Art Direction</span><span class="dna__ticker-dot">·</span>
+          <span>Motion Graphics</span><span class="dna__ticker-dot">·</span>
+          <span>Visual Design</span><span class="dna__ticker-dot">·</span>
+          <span>Typography</span><span class="dna__ticker-dot">·</span>
+          <span>Editorial</span><span class="dna__ticker-dot">·</span>
+          <span>Packaging</span><span class="dna__ticker-dot">·</span>
+          <span>Campaign</span><span class="dna__ticker-dot">·</span>
+          <!-- duplicate for seamless loop -->
+          <span>Brand Identity</span><span class="dna__ticker-dot">·</span>
+          <span>Art Direction</span><span class="dna__ticker-dot">·</span>
+          <span>Motion Graphics</span><span class="dna__ticker-dot">·</span>
+          <span>Visual Design</span><span class="dna__ticker-dot">·</span>
+          <span>Typography</span><span class="dna__ticker-dot">·</span>
+          <span>Editorial</span><span class="dna__ticker-dot">·</span>
+          <span>Packaging</span><span class="dna__ticker-dot">·</span>
+          <span>Campaign</span><span class="dna__ticker-dot">·</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="dna__divider reveal"></div>
+
+      <!-- Bottom row: palette + disciplines -->
+      <div class="dna__bottom">
+
+        <!-- Signature color palette -->
+        <div class="dna__palette reveal">
+          <span class="dna__palette-label">/ signature palette</span>
+          <div class="dna__swatches">
+            <div class="dna__swatch" style="--sw:#0d0d0d; --sw-border: rgba(255,255,255,0.18);">
+              <div class="dna__swatch-chip"></div>
+              <span class="dna__swatch-hex">#0D0D0D</span>
+            </div>
+            <div class="dna__swatch" style="--sw:#f5f0e8; --sw-border: rgba(255,255,255,0.08);">
+              <div class="dna__swatch-chip"></div>
+              <span class="dna__swatch-hex">#F5F0E8</span>
+            </div>
+            <div class="dna__swatch" style="--sw:#c8a96e; --sw-border: rgba(200,169,110,0.3);">
+              <div class="dna__swatch-chip"></div>
+              <span class="dna__swatch-hex">#C8A96E</span>
+            </div>
+            <div class="dna__swatch" style="--sw:#3a3a3a; --sw-border: rgba(255,255,255,0.12);">
+              <div class="dna__swatch-chip"></div>
+              <span class="dna__swatch-hex">#3A3A3A</span>
+            </div>
+            <div class="dna__swatch" style="--sw:#e8e0d5; --sw-border: rgba(255,255,255,0.08);">
+              <div class="dna__swatch-chip"></div>
+              <span class="dna__swatch-hex">#E8E0D5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="dna__stats reveal reveal-delay-1">
+          <span class="dna__palette-label">/ at a glance</span>
+          <div class="dna__stat-grid">
+            <div class="dna__stat">
+              <span class="dna__stat-num">09</span>
+              <span class="dna__stat-label">projects</span>
+            </div>
+            <div class="dna__stat">
+              <span class="dna__stat-num">3+</span>
+              <span class="dna__stat-label">years</span>
+            </div>
+            <div class="dna__stat">
+              <span class="dna__stat-num">∞</span>
+              <span class="dna__stat-label">ideas</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.dna__bottom -->
+
+    </section>
+
+
+
+
+
+    <section class="section--about" id="about">
+      <div class="about__header reveal">
+        <span class="section-number" style="color: var(--color-text-gray);">04</span>
+        <div class="about__meta">
+           <span class="section-label--dark">/about</span>
+           <span class="clock-display" style="color: var(--color-text-gray)"><span class="clock-time">--:-- --</span> KOLKATA /</span>
+        </div>
+      </div>
+      
+      <div class="about__content">
+        <div class="about__left">
+          <h2 class="about__heading split-text">
+            I'm Gaurav—I build at the intersection of hardware and digital design. I bridge the gap between abstract visual concepts and functional, tech-driven systems, focusing on precision and aesthetic impact.
+          </h2>
+          <p class="about__text reveal reveal-delay-2">
+            From crafting cinematic visual identities to developing custom electronic systems and automation solutions, I turn technical challenges into refined digital experiences.
+          </p>
+          <div class="about__socials reveal reveal-delay-3">
+            <a href="https://github.com/gaurav2k5" target="_blank" rel="noopener" class="about__social">GH</a>
+            <a href="https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/" target="_blank" rel="noopener" class="about__social">LI</a>
+            <a href="https://www.instagram.com/gaurav.comet/" target="_blank" rel="noopener" class="about__social">IG</a>
+          </div>
+        </div>
+        <div class="about__right reveal reveal-delay-1">
+          <img src="images/profile.jpg" alt="Gaurav profile" class="about__image">
+        </div>
+      </div>
+    </section>
+
+    <section class="section--process" id="process">
+      <div class="process__header reveal">
+        <span class="section-label--dark">/the process</span>
+      </div>
+      
+      <div class="process__steps">
+        <!-- Step 1 -->
+        <div class="process__step reveal">
+          <div class="process__num">01</div>
+          <div class="process__content">
+            <h3 class="process__title">Discovery & Strategy</h3>
+            <p class="process__desc">We begin by deconstructing the problem. This phase is about understanding the core objective, defining the aesthetic direction, and laying the strategic groundwork before any pixels are pushed.</p>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="process__step reveal reveal-delay-1">
+          <div class="process__num">02</div>
+          <div class="process__content">
+            <h3 class="process__title">Concept & Architecture</h3>
+            <p class="process__desc">Translating strategy into wireframes and visual concepts. I build the architectural skeleton of the digital experience, ensuring that form strictly follows function while maintaining a premium feel.</p>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="process__step reveal reveal-delay-2">
+          <div class="process__num">03</div>
+          <div class="process__content">
+            <h3 class="process__title">Execution & Refinement</h3>
+            <p class="process__desc">The final phase where aesthetics meet engineering. High-fidelity design, interaction physics, and pixel-perfect development come together to create an immersive, cinematic final product.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--services" id="services">
+      <div class="services__header reveal">
+        <span class="section-label--dark">/what i do</span>
+      </div>
+      <h2 class="services__title split-text">services</h2>
+
+      <!-- Service 1 -->
+      <div class="service-item reveal">
+        <div class="service-item__content">
+          <h3 class="service-item__name">Interactive Web & UI Design</h3>
+          <p class="service-item__desc">Designing clean, minimal, and highly interactive digital web experiences that prioritize both aesthetics and seamless user journeys.</p>
+        </div>
+        <div class="service-item__projects">
+            <a href="projects/frozen-echoes.html" class="service-item__project">
+              <img src="images/frozen-echoes.png" alt="Frozen Echoes UI Mockups">
+            </a>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-item reveal">
+        <div class="service-item__content">
+          <h3 class="service-item__name">Brand Identity</h3>
+          <p class="service-item__desc">Crafting cohesive visual identities, from typography selection to signature color palettes and tangible brand collateral.</p>
+        </div>
+        <div class="service-item__projects">
+          <a href="projects/into-the-virtual.html" class="service-item__project">
+            <img src="images/into-the-virtual.png" alt="Brand Identity Stationery">
+          </a>
+          <a href="projects/bloomscape.html" class="service-item__project">
+            <img src="images/bloomscape.png" alt="Bloomscape Branding">
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-item reveal">
+        <div class="service-item__content">
+          <h3 class="service-item__name">Visual Storytelling & Digital Art</h3>
+          <p class="service-item__desc">Transforming standard photos into immersive visual experiences. I specialize in modifying backgrounds, refining aesthetics, and generating cinematic visuals.</p>
+        </div>
+        <div class="service-item__projects">
+          <a href="#" class="service-item__project">
+            <img src="images/minimal_storytelling.png" alt="Minimal Visual Storytelling">
+          </a>
+          <a href="#" class="service-item__project">
+            <img src="images/cinematic_visuals.png" alt="Cinematic Abstract Edit">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section--contact" id="contact">
+      <div class="contact__socials-bar">
+        <a href="https://www.instagram.com/gaurav.comet/" target="_blank" rel="noopener" class="contact__social-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/" target="_blank" rel="noopener" class="contact__social-link">LinkedIn</a>
+        <a href="https://github.com/gaurav2k5" target="_blank" rel="noopener" class="contact__social-link">GitHub</a>
+      </div>
+      <div class="contact__main">
+        <div class="contact__info reveal">
+          <span class="contact__available">I'm available for new project</span>
+          <div class="contact__cta-text">Let's work<br>together</div>
+        </div>
+        <a href="mailto:gauravp1566@gmail.com" class="contact__button reveal reveal-delay-1">
+          CLICK TO CONTACT
+        </a>
+      </div>
+      <div class="footer__giant reveal">
+        <div class="footer__giant-text">GET IN TOUCH</div>
+      </div>
+      <div class="footer__image-strip">
+        <img src="images/hero.png" alt="" aria-hidden="true">
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__credit">&copy; 2025 Gaurav. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
