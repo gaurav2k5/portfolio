@@ -468,9 +468,12 @@ img {
 
 .featured__card img {
   width: 100%;
-  height: clamp(400px, 60vh, 700px);
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #0d0d0d;
   transition: transform var(--transition-smooth);
+  border-radius: 16px;
 }
 
 .featured__card:hover img {
@@ -491,7 +494,8 @@ img {
     margin-top: 0;
   }
   .featured__card img {
-    height: 400px;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
