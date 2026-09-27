@@ -605,39 +605,67 @@
       </div>
     </section>
 
-    <footer class="section--contact" id="contact">
-      <div class="cinematic-contact">
-        <!-- Full-bleed background -->
-        <div class="cinematic-contact__bg">
-          <img src="images/contact-bg.png" alt="" aria-hidden="true">
-          <div class="cinematic-contact__scrim"></div>
-        </div>
+    <footer class="section--contact glitch-contact" id="contact">
+      <!-- Noise texture overlay -->
+      <div class="glitch-contact__noise" aria-hidden="true"></div>
 
-        <!-- Top bar -->
-        <div class="cinematic-contact__top reveal">
-          <span class="cinematic-contact__label">/get in touch</span>
-          <span class="cinematic-contact__avail">● Available for projects</span>
-        </div>
+      <!-- Scan lines -->
+      <div class="glitch-contact__scanlines" aria-hidden="true"></div>
 
-        <!-- Center CTA -->
-        <div class="cinematic-contact__center">
-          <h2 class="cinematic-contact__headline split-text reveal">
-            Let's make<br>something<br><em>matter.</em>
+      <!-- Top meta bar -->
+      <div class="glitch-contact__topbar">
+        <span class="glitch-contact__sys" data-scramble="/get-in-touch">
+          <span class="scramble-text" data-text="/get-in-touch">/get-in-touch</span>
+        </span>
+        <span class="glitch-contact__sys" data-scramble="SYS::AVAILABLE">
+          <span class="scramble-text" data-text="SYS::AVAILABLE">SYS::AVAILABLE</span>
+        </span>
+        <span class="glitch-contact__sys">
+          <span class="scramble-text" data-text="INDIA / IST">INDIA / IST</span>
+        </span>
+      </div>
+
+      <!-- Main decode headline -->
+      <div class="glitch-contact__main">
+        <div class="glitch-contact__line">
+          <span class="glitch-contact__prefix">_</span>
+          <h2 class="glitch-contact__headline">
+            <span class="scramble-text glitch-contact__word" data-text="READY">READY</span>
           </h2>
         </div>
-
-        <!-- Bottom bar -->
-        <div class="cinematic-contact__bottom reveal">
-          <a href="mailto:gauravp1566@gmail.com" class="cinematic-contact__email">
-            gauravp1566@gmail.com
-          </a>
-          <div class="cinematic-contact__socials">
-            <a href="https://www.instagram.com/gaurav.comet/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/gaurav2k5" target="_blank" rel="noopener">GitHub</a>
-          </div>
-          <p class="cinematic-contact__credit">© 2025 Gaurav · Comet Studio</p>
+        <div class="glitch-contact__line">
+          <h2 class="glitch-contact__headline glitch-contact__headline--outline">
+            <span class="scramble-text glitch-contact__word" data-text="TO BUILD">TO BUILD</span>
+          </h2>
         </div>
+        <div class="glitch-contact__line">
+          <h2 class="glitch-contact__headline">
+            <span class="scramble-text glitch-contact__word" data-text="SOMETHING">SOMETHING</span>
+          </h2>
+        </div>
+        <div class="glitch-contact__line">
+          <h2 class="glitch-contact__headline glitch-contact__headline--dim">
+            <span class="scramble-text glitch-contact__word" data-text="THAT MATTERS?">THAT MATTERS?</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- Email decode block -->
+      <div class="glitch-contact__cta">
+        <div class="glitch-contact__cursor-blink">▮</div>
+        <a href="mailto:gauravp1566@gmail.com" class="glitch-contact__email">
+          <span class="scramble-text" data-text="gauravp1566@gmail.com">gauravp1566@gmail.com</span>
+        </a>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="glitch-contact__footer">
+        <div class="glitch-contact__socials">
+          <a href="https://www.instagram.com/gaurav.comet/" target="_blank" rel="noopener" class="scramble-text" data-text="INSTAGRAM">INSTAGRAM</a>
+          <a href="https://www.linkedin.com/in/gaurav-pratap-singh-0459b3329/" target="_blank" rel="noopener" class="scramble-text" data-text="LINKEDIN">LINKEDIN</a>
+          <a href="https://github.com/gaurav2k5" target="_blank" rel="noopener" class="scramble-text" data-text="GITHUB">GITHUB</a>
+        </div>
+        <p class="glitch-contact__credit">© 2025 GAURAV.COMET — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
 

@@ -1186,3 +1186,75 @@ function initHeroCanvas() {
   resize();
   render();
 }
+
+/* --- SCRAMBLE TEXT ON SCROLL --- */
+(function() {
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@.:/_!?#%&*';
+  
+  function scramble(el) {
+    const target = el.dataset.text;
+    const len = target.length;
+    let frame = 0;
+    const totalFrames = 28;
+    
+    if (el._scrambleTimer) clearInterval(el._scrambleTimer);
+    
+    el._scrambleTimer = setInterval(() => {
+      let out = '';
+      const progress = frame / totalFrames;
+      
+      for (let i = 0; i < len; i++) {
+        if (target[i] === ' ') {
+          out += ' ';
+        } else if (i < Math.floor(progress * len)) {
+          out += target[i]; // resolved
+        } else {
+          out += CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+      }
+      
+      el.textContent = out;
+      frame++;
+      
+      if (frame > totalFrames) {
+        clearInterval(el._scrambleTimer);
+        el.textContent = target;
+      }
+    }, 40);
+  }
+
+  function initScramble() {
+    const section = document.querySelector('.glitch-contact');
+    if (!section) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger each scramble-text element
+          const els = section.querySelectorAll('.scramble-text');
+          els.forEach((el, i) => {
+            setTimeout(() => scramble(el), i * 120);
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+
+    observer.observe(section);
+
+    // Re-scramble email on hover
+    const emailEl = section.querySelector('.glitch-contact__email .scramble-text');
+    if (emailEl) {
+      section.querySelector('.glitch-contact__email').addEventListener('mouseenter', () => {
+        scramble(emailEl);
+      });
+    }
+
+    // Re-scramble socials on hover
+    section.querySelectorAll('.glitch-contact__socials a.scramble-text').forEach(a => {
+      a.addEventListener('mouseenter', () => scramble(a));
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initScramble);
+})();
