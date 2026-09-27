@@ -130,15 +130,33 @@ function initFilmstrip() {
   window.addEventListener('touchmove', e => { if (isDragging) onMove(e.touches[0].clientX); }, { passive: true });
   window.addEventListener('touchend',  onUp);
 
-  // Wheel scroll only while section is in view
-  scene.addEventListener('wheel', e => {
-    e.preventDefault();
-    const { min, max } = getBounds();
-    targetX = clamp(targetX - e.deltaY * 1.4, min, max);
-    clearTimeout(scene._wheelSnap);
-    scene._wheelSnap = setTimeout(snap, 80);
-    showUI();
-  }, { passive: false });
+  // Use GSAP ScrollTrigger for natural scrolling if available
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.create({
+      trigger: '#featured',
+      start: 'top top',
+      end: () => '+=' + (frames.length * window.innerWidth * 0.4),
+      pin: true,
+      scrub: 1,
+      onUpdate: (self) => {
+        if (!isDragging) {
+          const { min } = getBounds();
+          targetX = min * self.progress;
+          showUI();
+        }
+      }
+    });
+  } else {
+    // Fallback: Wheel scroll trap
+    scene.addEventListener('wheel', e => {
+      e.preventDefault();
+      const { min, max } = getBounds();
+      targetX = clamp(targetX - e.deltaY * 1.4, min, max);
+      clearTimeout(scene._wheelSnap);
+      scene._wheelSnap = setTimeout(snap, 80);
+      showUI();
+    }, { passive: false });
+  }
 
   // RAF loop
   (function raf() {
