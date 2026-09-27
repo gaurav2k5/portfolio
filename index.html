@@ -157,26 +157,184 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         FILMSTRIP — Best Works
+    ════════════════════════════════════════════ -->
     <section class="section--featured" id="featured">
-      <div class="featured__header reveal">
-        <span class="section-number" style="color: var(--color-text-gray);">02</span>
-        <div class="featured__meta">
-          <span class="section-label--dark">/featured</span>
-          <span class="clock-display" style="color: var(--color-text-gray)"><span class="clock-time">--:-- --</span> KOLKATA /</span>
+
+      <!-- ISO tag -->
+      <div class="film-iso" aria-hidden="true">ISO 400 — 35mm</div>
+
+      <!-- Section header -->
+      <div class="film-header-bar">
+        <div class="film-header-bar__left">
+          <span class="film-section-num">02</span>
+          <span class="film-section-label">/ Best Works</span>
+        </div>
+        <div class="film-counter">
+          <span id="film-active-idx">01</span> / 06
         </div>
       </div>
-      <h2 class="featured__title split-text">best works</h2>
-      <div class="featured__grid">
-        <div class="featured__card reveal">
-          <img src="images/comet1.png" alt="Comet Work 1">
+
+      <!-- Ghost background title -->
+      <div class="film-bg-title" id="film-bg-title" aria-hidden="true">SELECTED</div>
+
+      <!-- Drag hint -->
+      <div class="film-drag-hint" id="film-drag-hint" aria-hidden="true">
+        <div class="film-drag-arrows">
+          <div class="film-drag-arrow"></div>
+          <div class="film-drag-arrow"></div>
         </div>
-        <div class="featured__card reveal">
-          <img src="images/comet2.png" alt="Comet Work 2">
-        </div>
-        <div class="featured__card reveal">
-          <img src="images/comet3.png" alt="Comet Work 3">
+        <div class="film-drag-text">Drag to explore</div>
+      </div>
+
+      <!-- Scan line -->
+      <div class="film-scan-line" aria-hidden="true"></div>
+
+      <!-- Filmstrip -->
+      <div class="filmstrip-scene" id="filmstrip-scene">
+        <div class="filmstrip-track" id="filmstrip-track">
+
+          <!-- Frame 1 -->
+          <div class="film-frame" data-idx="1" data-title="Comet Works I" data-category="Visual Identity / Digital Art" data-href="#" data-ghost="COMET">
+            <div class="film-frame__holes">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+            <div class="film-frame__image-wrap">
+              <img class="film-frame__img" src="images/comet1.png" alt="Comet Work 1">
+              <div class="film-frame__grain" aria-hidden="true"></div>
+            </div>
+            <div class="film-frame__meta">
+              <span class="film-frame__code">COMET-A</span>
+              <span class="film-frame__idx">01 ▪ 06</span>
+            </div>
+            <div class="film-frame__holes film-frame__holes--bottom">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+          </div>
+
+          <!-- Frame 2 -->
+          <div class="film-frame" data-idx="2" data-title="Comet Works II" data-category="3D / Motion" data-href="#" data-ghost="MOTION">
+            <div class="film-frame__holes">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+            <div class="film-frame__image-wrap">
+              <img class="film-frame__img" src="images/comet2.png" alt="Comet Work 2">
+              <div class="film-frame__grain" aria-hidden="true"></div>
+            </div>
+            <div class="film-frame__meta">
+              <span class="film-frame__code">COMET-B</span>
+              <span class="film-frame__idx">02 ▪ 06</span>
+            </div>
+            <div class="film-frame__holes film-frame__holes--bottom">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+          </div>
+
+          <!-- Frame 3 -->
+          <div class="film-frame" data-idx="3" data-title="Comet Works III" data-category="Cinematic / Editorial" data-href="#" data-ghost="CINEMA">
+            <div class="film-frame__holes">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+            <div class="film-frame__image-wrap">
+              <img class="film-frame__img" src="images/comet3.png" alt="Comet Work 3">
+              <div class="film-frame__grain" aria-hidden="true"></div>
+            </div>
+            <div class="film-frame__meta">
+              <span class="film-frame__code">COMET-C</span>
+              <span class="film-frame__idx">03 ▪ 06</span>
+            </div>
+            <div class="film-frame__holes film-frame__holes--bottom">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+          </div>
+
+          <!-- Frame 4 -->
+          <div class="film-frame" data-idx="4" data-title="Frozen Echoes" data-category="UI / Interactive Design" data-href="projects/frozen-echoes.html" data-ghost="FROZEN">
+            <div class="film-frame__holes">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+            <div class="film-frame__image-wrap">
+              <img class="film-frame__img" src="images/frozen-echoes.png" alt="Frozen Echoes">
+              <div class="film-frame__grain" aria-hidden="true"></div>
+            </div>
+            <div class="film-frame__meta">
+              <span class="film-frame__code">COMET-D</span>
+              <span class="film-frame__idx">04 ▪ 06</span>
+            </div>
+            <div class="film-frame__holes film-frame__holes--bottom">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+          </div>
+
+          <!-- Frame 5 -->
+          <div class="film-frame" data-idx="5" data-title="Neon Rain" data-category="Visual Storytelling" data-href="#" data-ghost="NEON">
+            <div class="film-frame__holes">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+            <div class="film-frame__image-wrap">
+              <img class="film-frame__img" src="images/neon-rain.png" alt="Neon Rain">
+              <div class="film-frame__grain" aria-hidden="true"></div>
+            </div>
+            <div class="film-frame__meta">
+              <span class="film-frame__code">COMET-E</span>
+              <span class="film-frame__idx">05 ▪ 06</span>
+            </div>
+            <div class="film-frame__holes film-frame__holes--bottom">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+          </div>
+
+          <!-- Frame 6 -->
+          <div class="film-frame" data-idx="6" data-title="Summer Melt" data-category="Digital Art / Editorial" data-href="#" data-ghost="SUMMER">
+            <div class="film-frame__holes">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+            <div class="film-frame__image-wrap">
+              <img class="film-frame__img" src="images/summer-melt.png" alt="Summer Melt">
+              <div class="film-frame__grain" aria-hidden="true"></div>
+            </div>
+            <div class="film-frame__meta">
+              <span class="film-frame__code">COMET-F</span>
+              <span class="film-frame__idx">06 ▪ 06</span>
+            </div>
+            <div class="film-frame__holes film-frame__holes--bottom">
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+              <div class="film-frame__hole"></div><div class="film-frame__hole"></div><div class="film-frame__hole"></div>
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <!-- Active project info -->
+      <div class="film-active-info" id="film-active-info">
+        <div class="film-active-info__num" id="film-info-num">— 01</div>
+        <div class="film-active-info__title" id="film-info-title">Comet Works I</div>
+        <div class="film-active-info__category" id="film-info-category">Visual Identity / Digital Art</div>
+      </div>
+
+      <!-- View CTA -->
+      <div class="film-view-cta" id="film-view-cta">
+        <a href="#" class="film-view-btn" id="film-view-btn">View Project</a>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="film-progress" aria-hidden="true">
+        <div class="film-progress__fill" id="film-progress-fill"></div>
+      </div>
+
     </section>
 
     <section class="section--principles" id="principles">

@@ -1,3 +1,158 @@
+/* ═══════════════════════════════════════
+   FILMSTRIP — Best Works interaction
+═══════════════════════════════════════ */
+function initFilmstrip() {
+  const scene   = document.getElementById('filmstrip-scene');
+  const track   = document.getElementById('filmstrip-track');
+  if (!scene || !track) return;
+
+  const frames      = [...track.querySelectorAll('.film-frame')];
+  const dragHint    = document.getElementById('film-drag-hint');
+  const bgTitle     = document.getElementById('film-bg-title');
+  const activeInfo  = document.getElementById('film-active-info');
+  const infoNum     = document.getElementById('film-info-num');
+  const infoTitle   = document.getElementById('film-info-title');
+  const infoCat     = document.getElementById('film-info-category');
+  const viewCta     = document.getElementById('film-view-cta');
+  const viewBtn     = document.getElementById('film-view-btn');
+  const activeIdxEl = document.getElementById('film-active-idx');
+  const progressFill= document.getElementById('film-progress-fill');
+
+  let isDragging = false, startMouseX = 0, startX = 0;
+  let currentX = 0, targetX = 0;
+  let prevActiveIdx = -1, hasMoved = false;
+
+  const getFrameW = () => {
+    const f = frames[0];
+    const s = getComputedStyle(f);
+    return f.offsetWidth + parseFloat(s.marginLeft) + parseFloat(s.marginRight);
+  };
+
+  const getBounds = () => ({
+    min: -(frames.length - 1) * getFrameW(),
+    max: 0
+  });
+
+  const clamp = (v, mn, mx) => Math.max(mn, Math.min(mx, v));
+
+  const getActiveIdx = () => {
+    const fw = getFrameW();
+    return Math.round(clamp(-currentX / fw, 0, frames.length - 1));
+  };
+
+  // Centre first frame
+  function positionTrack() {
+    const sceneW  = scene.offsetWidth;
+    const frameW  = frames[0].offsetWidth;
+    const marginL = parseFloat(getComputedStyle(frames[0]).marginLeft);
+    const offset  = (sceneW / 2) - (frameW / 2) - marginL;
+    track.style.paddingLeft  = offset + 'px';
+    track.style.paddingRight = offset + 'px';
+  }
+  positionTrack();
+  window.addEventListener('resize', positionTrack);
+
+  function showUI() {
+    if (hasMoved) return;
+    hasMoved = true;
+    if (dragHint) {
+      dragHint.style.opacity = '0';
+      setTimeout(() => dragHint.classList.add('hidden'), 500);
+    }
+    if (activeInfo) activeInfo.classList.add('visible');
+    if (viewCta)    viewCta.classList.add('visible');
+  }
+
+  function updateActive() {
+    const idx = getActiveIdx();
+    if (idx === prevActiveIdx) return;
+    prevActiveIdx = idx;
+
+    frames.forEach((f, i) => f.classList.toggle('active', i === idx));
+
+    const frame    = frames[idx];
+    const num      = String(frame.dataset.idx).padStart(2, '0');
+    const title    = frame.dataset.title    || '';
+    const category = frame.dataset.category || '';
+    const href     = frame.dataset.href     || '#';
+    const ghost    = frame.dataset.ghost    || 'WORKS';
+
+    if (infoNum)   infoNum.textContent    = '— ' + num;
+    if (infoTitle) infoTitle.textContent  = title;
+    if (infoCat)   infoCat.textContent    = category;
+    if (viewBtn)   viewBtn.href           = href;
+    if (activeIdxEl) activeIdxEl.textContent = num;
+    if (bgTitle) {
+      bgTitle.style.opacity   = '0';
+      setTimeout(() => {
+        bgTitle.textContent     = ghost;
+        bgTitle.style.opacity   = '1';
+        bgTitle.style.transform = `translateX(${-idx * 40}px)`;
+      }, 200);
+    }
+    if (progressFill) {
+      progressFill.style.width = ((idx / (frames.length - 1)) * 100) + '%';
+    }
+  }
+
+  // Snap after drag
+  function snap() {
+    const fw  = getFrameW();
+    const idx = Math.round(clamp(-targetX / fw, 0, frames.length - 1));
+    targetX   = -idx * fw;
+  }
+
+  // Drag start
+  const onDown = (x) => {
+    isDragging  = true;
+    startMouseX = x;
+    startX      = currentX;
+    showUI();
+  };
+  const onMove = (x) => {
+    if (!isDragging) return;
+    const { min, max } = getBounds();
+    let next = startX + (x - startMouseX);
+    if      (next > max) next = max + (next - max) * 0.1;
+    else if (next < min) next = min + (next - min) * 0.1;
+    targetX = next;
+  };
+  const onUp = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    snap();
+  };
+
+  track.addEventListener('mousedown',  e => onDown(e.clientX));
+  window.addEventListener('mousemove', e => onMove(e.clientX));
+  window.addEventListener('mouseup',   onUp);
+  track.addEventListener('touchstart', e => onDown(e.touches[0].clientX), { passive: true });
+  window.addEventListener('touchmove', e => { if (isDragging) onMove(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend',  onUp);
+
+  // Wheel scroll only while section is in view
+  scene.addEventListener('wheel', e => {
+    e.preventDefault();
+    const { min, max } = getBounds();
+    targetX = clamp(targetX - e.deltaY * 1.4, min, max);
+    clearTimeout(scene._wheelSnap);
+    scene._wheelSnap = setTimeout(snap, 80);
+    showUI();
+  }, { passive: false });
+
+  // RAF loop
+  (function raf() {
+    currentX += (targetX - currentX) * 0.085;
+    track.style.transform = `translateX(${currentX}px)`;
+    updateActive();
+    requestAnimationFrame(raf);
+  })();
+
+  // Init: activate first frame
+  frames[0] && frames[0].classList.add('active');
+  if (bgTitle) bgTitle.style.transition = 'opacity .3s, transform .8s cubic-bezier(.16,1,.3,1)';
+}
+
 function initConsoleEasterEgg() {
   const style1 = 'color: #ffffff; font-size: 24px; font-weight: bold; background: #0B0B0B; padding: 10px; border-radius: 5px;';
   const style2 = 'color: #aaaaaa; font-size: 12px; margin-top: 10px;';
@@ -33,7 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomScrollbar();
   init3DCarousel();
   initHeroCanvas();
+  initFilmstrip();
 });
+
 
 function initClock() {
   const clockEls = document.querySelectorAll('.clock-time');
