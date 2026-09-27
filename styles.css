@@ -863,7 +863,7 @@ img {
 }
 
 .principle-card--transparency {
-  background-image: url('images/make it matter 2.png');
+  background-image: url('images/neon-rain.png');
   grid-row: span 1;
   color: white;
   text-align: center;
@@ -871,7 +871,7 @@ img {
 }
 
 .principle-card--aesthetics {
-  background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%), url('images/ChatGPT Image Sep 4, 2026, 11_11_56 PM.png');
+  background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%), url('images/summer-melt.png');
   color: white;
 }
 
@@ -885,7 +885,7 @@ img {
 }
 
 .principle-card--value {
-  background-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%), url('images/ChatGPT Image Sep 4, 2026, 11_11_56 PM.png');
+  background-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%), url('images/frozen-echoes.png');
   color: white;
 }
 
