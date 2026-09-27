@@ -863,7 +863,7 @@ img {
 }
 
 .principle-card--transparency {
-  background-image: url('images/principle-transparency.png');
+  background-image: url('images/neon-rain.png');
   grid-row: span 1;
   color: white;
   text-align: center;
@@ -871,8 +871,8 @@ img {
 }
 
 .principle-card--aesthetics {
-  background-image: url('images/principle-aesthetics.png');
-  color: var(--color-text-dark);
+  background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%), url('images/summer-melt.png');
+  color: white;
 }
 
 .principle-card--honesty {
@@ -885,7 +885,7 @@ img {
 }
 
 .principle-card--value {
-  background-image: url('images/principle-value.png');
+  background-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%), url('images/frozen-echoes.png');
   color: white;
 }
 
