@@ -3130,3 +3130,148 @@ body::before {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(30vw, 40vh) scale(1.2); }
 }
+
+/* ---------------------------------------
+   BRUTALIST SERVICES SECTION
+--------------------------------------- */
+
+.section--services {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  padding: 120px 4vw 100px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.brutal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.brutal__label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-gray);
+}
+
+.brutal__count {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-gray);
+}
+
+.brutal__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.brutal__item {
+  border-bottom: 1px solid var(--color-border-light);
+  cursor: default;
+  overflow: hidden;
+}
+
+.brutal__item-inner {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 40px;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 0;
+  transition: padding 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.brutal__item:hover .brutal__item-inner {
+  padding: 56px 0;
+}
+
+.brutal__num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-gray);
+  align-self: flex-start;
+  padding-top: 10px;
+}
+
+.brutal__name {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  transition: letter-spacing 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.brutal__item:hover .brutal__name {
+  letter-spacing: -0.02em;
+}
+
+.brutal__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.brutal__tag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-gray);
+  border: 1px solid var(--color-border-light);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.brutal__desc {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: var(--color-text-gray);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.brutal__item:hover .brutal__desc {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.brutal__arrow {
+  font-size: 28px;
+  color: var(--color-text-dark);
+  opacity: 0;
+  transform: translate(-10px, 10px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  justify-self: end;
+  align-self: flex-start;
+  padding-top: 6px;
+}
+
+.brutal__item:hover .brutal__arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (max-width: 768px) {
+  .brutal__item-inner {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .brutal__desc {
+    grid-column: 1 / -1;
+    opacity: 1;
+    transform: none;
+  }
+  .brutal__arrow { display: none; }
+}
